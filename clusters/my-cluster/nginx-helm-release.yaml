@@ -13,14 +13,16 @@ spec:
         name: flux-system
         namespace: flux-system
       interval: 1m
+      reconcileStrategy: Revision
   values:
     indexHtml: |-
       <!doctype html>
       <html>
       <head>
-        <title>My Custom Page</title>
+        <title>Welcome to the page</</title>
       </head>
       <body>
-        <h1>Welcome to my custom Nginx page!</h1>
+        <h1>Changing a ConfigMap should restart the pod</h1>
+        <h2>This is the second line in the Welcome page</h2>
       </body>
       </html>            
