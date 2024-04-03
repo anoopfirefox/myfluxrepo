@@ -6,7 +6,7 @@ metadata:
   namespace: default
 spec:
   interval: 5m0s
-  url: http://localhost:8080/api/charts
+  url: http://101.0.62.89:8080
   secretRef:
     name: myhelmrepo-secret
 ---
