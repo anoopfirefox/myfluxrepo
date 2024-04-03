@@ -5,10 +5,11 @@ metadata:
   namespace: default
 spec:
   interval: 5m
+  suspend: true
   chart:
     spec:
       chart: apache
-      version: '0.1.0'
+      version: '>= 0.1.0 < 1.0.0'
       sourceRef:
         kind: HelmRepository
         name: github
