@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: Secret
 metadata:
@@ -6,3 +7,15 @@ metadata:
 data:
   .dockerconfigjson: ewoJImF1dGhzIjogewoJCSJnaGNyLmlvIjogewoJCQkiYXV0aCI6ICJZVzV2YjNCbWFYSmxabTk0T21kb2NGOHhZMGxLWjAxR2QzTklUWFJ4ZWpacE1qQlNjMVZZVURKSWNtcDFVWGd5ZVVWWU56RT0iCgkJfSwKCQkiaHR0cHM6Ly9pbmRleC5kb2NrZXIuaW8vdjEvIjogewoJCQkiYXV0aCI6ICJZVzV2YjNCb1pXZGtaVEU1T1RVNlFYWmxibWRsY2lNa0pqSXlNQT09IgoJCX0KCX0KfQ==
 type: kubernetes.io/dockerconfigjson    
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: github
+  namespace: default
+spec:
+  type: oci
+  interval: 5m0s
+  url: oci://ghcr.io/anoopfirefox/myfluxrepo
+  secretRef:
+    name: github-credentials  
